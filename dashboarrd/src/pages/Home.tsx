@@ -1,7 +1,9 @@
 import Navigation from "../Components/Navigation";
 
-import { Box, SimpleGrid } from "@chakra-ui/react";
+import { Box, Grid, GridItem, SimpleGrid } from "@chakra-ui/react";
 import Widget from "../Components/Widget";
+import Featured from "../Components/Featured";
+import Charts from "../Components/Charts";
 
 const Home = () => {
   return (
@@ -11,9 +13,20 @@ const Home = () => {
         <Widget type="user" />
         <Widget type="order" />
         <Widget type="earning" />
-
         <Widget type="balance" />
       </SimpleGrid>
+      <Grid
+        templateColumns={{ base: "1fr", lg: "1fr 2fr" }}
+        mt="2rem"
+        gap="2rem"
+      >
+        <GridItem boxShadow="lg">
+          <Featured />
+        </GridItem>
+        <GridItem>
+          <Charts />
+        </GridItem>
+      </Grid>
     </Box>
   );
 };
